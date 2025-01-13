@@ -1,0 +1,152 @@
+
+// 全局变量
+:root {
+  --rounded:8px;
+  --rounded-lg: 15px;
+  --rounded-full: 9999px;
+  --page-bg:rgba(0, 0, 0,0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none; /* 去除点击时的轮廓 */
+  -webkit-font-smoothing: antialiased; /* 字体平滑 */
+  -moz-osx-font-smoothing: grayscale; /* 字体平滑 */
+  box-sizing: border-box; /* 盒子模型 */
+  font-family: Inter, 'Helvetica Neue', Helvetica, 'PingFang SC','Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif; /* 设置字体 */
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 清除 ul 和 ol 默认样式 */
+ul, ol {
+  list-style: none; /* 去除符号或数字样式 */
+  margin: 0; /* 去除默认的外边距 */
+  padding: 0; /* 去除默认的内边距 */
+}
+
+/* 清除 li 默认样式 */
+li {
+  margin: 0; /* 去除默认的外边距 */
+  padding: 0; /* 去除默认的内边距 */
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  background: linear-gradient(to right,
+      #bb313e25,
+      #bb313e25,
+      #d7222925,
+      #dd4a1625,
+      #e4761525,
+      #f5c50025,
+      #f0e92725,
+      #b1ce2425,
+      #48a93525,
+      #03944525,
+      #157c4f25,
+      #176a5825,
+      #1b556325,
+      #1d386f25,
+      #1d386f25,
+      #20277825,
+      #52266325,
+      #8a244b25);
+}
+
+// 基础样式
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+// 页面基础样式
+.page-layout {
+  padding: 10px;
+  position: relative;
+  margin-top: 20px;
+  background: var(--el-mask-color-extra-light);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: var(--rounded-lg);
+}
+
+/* 自定义屏幕尺寸 */
+.container {
+    margin: 0 auto; // 水平居中
+    max-width: 100%; // 基础最大宽度
+
+    @media (min-width: 1024px) {
+        max-width: 900px;
+    }
+
+    @media (min-width: 1280px) {
+        max-width: 1200px;
+    }
+}
+
+// Transition 动画
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// keyframes 动画
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// line-clamp
+.line-clamp{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+// loading 动画
+.loading-layout {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 10px solid;
+  border-color: rgba(255, 255, 255, 0.15) rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.5);
+  -webkit-animation: rotation 1s linear infinite;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// markdown 样式
+.markdown-body {
+  background-color: transparent !important;
+}
